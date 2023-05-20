@@ -321,11 +321,11 @@ class _BmiScreenState extends State<BmiScreen> {
                   } else if (24.9 <= bmi && bmi < 29.9) {
                     res = 'Over weight';
                     resColor = Colors.red;
-                    adv = 'do some workouts';
+                    adv = 'Do some workouts';
                   } else {
                     res = 'Obese';
                     resColor = Colors.red;
-                    adv = 'Go suicide';
+                    adv = 'Do workouts and go on a diet';
                   }
                   Navigator.push(
                     context,
