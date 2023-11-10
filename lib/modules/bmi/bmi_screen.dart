@@ -321,36 +321,36 @@ class _BmiScreenState extends State<BmiScreen> {
             padding: const EdgeInsets.all(15.0),
             child: defaultButton(
               function: () {
-                double bmi = weight / pow(height / 100, 2);
-                if (bmi < 18.5) {
-                  res = 'Under weight';
-                  resColor = Colors.amber;
-                  adv = 'You have a slim body \nEat more!';
-                } else if (18.5 <= bmi && bmi < 24.9) {
-                  res = 'Normal';
-                  resColor = normalTextColor;
-                  adv = 'You have a normal body weight\nGood job!';
-                } else if (24.9 <= bmi && bmi < 29.9) {
-                  res = 'Over weight';
-                  resColor = Colors.red;
-                  adv = 'do some workouts';
-                } else {
-                  res = 'Obese';
-                  resColor = Colors.red;
-                  adv = 'Go suicide';
-                }
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ResultScreen(
-                      bmi: bmi,
-                      res: res,
-                      resColor: resColor,
-                      adv: adv,
+                  double bmi = weight / pow(height / 100, 2);
+                  if (bmi < 18.5) {
+                    res = 'Under weight';
+                    resColor = Colors.amber;
+                    adv = 'You have a slim body \nEat more!';
+                  } else if (18.5 <= bmi && bmi < 24.9) {
+                    res = 'Normal';
+                    resColor = normalTextColor;
+                    adv = 'You have a normal body weight\nGood job!';
+                  } else if (24.9 <= bmi && bmi < 29.9) {
+                    res = 'Over weight';
+                    resColor = Colors.red;
+                    adv = 'do some workouts';
+                  } else {
+                    res = 'Obese';
+                    resColor = Colors.red;
+                    adv = 'Go suicide';
+                  }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ResultScreen(
+                        bmi: bmi,
+                        res: res,
+                        resColor: resColor,
+                        adv: adv,
+                      ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
               text: 'Calculator',
             ),
           ),
