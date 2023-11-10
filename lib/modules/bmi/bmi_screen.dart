@@ -53,13 +53,15 @@ class _BmiScreenState extends State<BmiScreen> {
                             color: isMale ? containerColor : notChosenColor,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(
-                                Icons.male,
-                                size: 90,
-                                color: Colors.white,
+                            children: [
+                              Flexible(
+                                child: Icon(
+                                  Icons.male,
+                                  size: 90,
+                                  color: Colors.white,
+                                ),
                               ),
                               Text(
                                 'MALE',
@@ -89,13 +91,15 @@ class _BmiScreenState extends State<BmiScreen> {
                             color: !isMale ? containerColor : notChosenColor,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(
-                                Icons.female,
-                                size: 90,
-                                color: Colors.white,
+                            children: [
+                              Flexible(
+                                child: Icon(
+                                  Icons.female,
+                                  size: 90,
+                                  color: Colors.white,
+                                ),
                               ),
                               Text(
                                 'FEMALE',
@@ -215,23 +219,27 @@ class _BmiScreenState extends State<BmiScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                FloatingActionButton(
-                                  heroTag: 'w--',
-                                  onPressed: () => setState(() {
-                                    if (weight > 0) {
-                                      weight--;
-                                    }
-                                  }),
-                                  mini: true,
-                                  backgroundColor: floatingButtonColor,
-                                  child: const Icon(Icons.remove),
+                                Flexible(
+                                  child: FloatingActionButton(
+                                    heroTag: 'w--',
+                                    onPressed: () => setState(() {
+                                      if (weight > 0) {
+                                        weight--;
+                                      }
+                                    }),
+                                    mini: true,
+                                    backgroundColor: floatingButtonColor,
+                                    child: const Icon(Icons.remove),
+                                  ),
                                 ),
-                                FloatingActionButton(
-                                  heroTag: 'w++',
-                                  onPressed: () => setState(() => weight++),
-                                  mini: true,
-                                  backgroundColor: floatingButtonColor,
-                                  child: const Icon(Icons.add),
+                                Flexible(
+                                  child: FloatingActionButton(
+                                    heroTag: 'w++',
+                                    onPressed: () => setState(() => weight++),
+                                    mini: true,
+                                    backgroundColor: floatingButtonColor,
+                                    child: const Icon(Icons.add),
+                                  ),
                                 ),
                               ],
                             ),
@@ -276,23 +284,27 @@ class _BmiScreenState extends State<BmiScreen> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                FloatingActionButton(
-                                  heroTag: 'a--',
-                                  onPressed: () => setState(() {
-                                    if (age > 0) {
-                                      age--;
-                                    }
-                                  }),
-                                  mini: true,
-                                  backgroundColor: floatingButtonColor,
-                                  child: const Icon(Icons.remove),
+                                Flexible(
+                                  child: FloatingActionButton(
+                                    heroTag: 'a--',
+                                    onPressed: () => setState(() {
+                                      if (age > 0) {
+                                        age--;
+                                      }
+                                    }),
+                                    mini: true,
+                                    backgroundColor: floatingButtonColor,
+                                    child: const Icon(Icons.remove),
+                                  ),
                                 ),
-                                FloatingActionButton(
-                                  heroTag: 'a++',
-                                  onPressed: () => setState(() => age++),
-                                  mini: true,
-                                  backgroundColor: floatingButtonColor,
-                                  child: const Icon(Icons.add),
+                                Flexible(
+                                  child: FloatingActionButton(
+                                    heroTag: 'a++',
+                                    onPressed: () => setState(() => age++),
+                                    mini: true,
+                                    backgroundColor: floatingButtonColor,
+                                    child: const Icon(Icons.add),
+                                  ),
                                 ),
                               ],
                             ),
@@ -309,36 +321,36 @@ class _BmiScreenState extends State<BmiScreen> {
             padding: const EdgeInsets.all(15.0),
             child: defaultButton(
               function: () {
-                  double bmi = weight / pow(height / 100, 2);
-                  if (bmi < 18.5) {
-                    res = 'Under weight';
-                    resColor = Colors.amber;
-                    adv = 'You have a slim body \nEat more!';
-                  } else if (18.5 <= bmi && bmi < 24.9) {
-                    res = 'Normal';
-                    resColor = normalTextColor;
-                    adv = 'You have a normal body weight\nGood job!';
-                  } else if (24.9 <= bmi && bmi < 29.9) {
-                    res = 'Over weight';
-                    resColor = Colors.red;
-                    adv = 'do some workouts';
-                  } else {
-                    res = 'Obese';
-                    resColor = Colors.red;
-                    adv = 'Go suicide';
-                  }
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ResultScreen(
-                        bmi: bmi,
-                        res: res,
-                        resColor: resColor,
-                        adv: adv,
-                      ),
+                double bmi = weight / pow(height / 100, 2);
+                if (bmi < 18.5) {
+                  res = 'Under weight';
+                  resColor = Colors.amber;
+                  adv = 'You have a slim body \nEat more!';
+                } else if (18.5 <= bmi && bmi < 24.9) {
+                  res = 'Normal';
+                  resColor = normalTextColor;
+                  adv = 'You have a normal body weight\nGood job!';
+                } else if (24.9 <= bmi && bmi < 29.9) {
+                  res = 'Over weight';
+                  resColor = Colors.red;
+                  adv = 'do some workouts';
+                } else {
+                  res = 'Obese';
+                  resColor = Colors.red;
+                  adv = 'Go suicide';
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultScreen(
+                      bmi: bmi,
+                      res: res,
+                      resColor: resColor,
+                      adv: adv,
                     ),
-                  );
-                },
+                  ),
+                );
+              },
               text: 'Calculator',
             ),
           ),
