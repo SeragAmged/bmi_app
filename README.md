@@ -11,8 +11,10 @@ bmi-app is a simple Flutter application that allows users to calculate their Bod
 - Display a corresponding health status message based on the calculated BMI.
 
 ## Screenshots
-![2](https://github.com/SeragAmged/bmi_app/assets/71095930/9a150646-5ec8-43aa-977b-5c72dafaf256)
-![1](https://github.com/SeragAmged/bmi_app/assets/71095930/dcf33939-b52b-47dc-b0e9-927b0f2876cb)
+
+Bmi calculator page|results page
+:-------------------------:|:-------------------------:
+![1](https://github.com/SeragAmged/bmi_app/assets/71095930/dcf33939-b52b-47dc-b0e9-927b0f2876cb) | ![2](https://github.com/SeragAmged/bmi_app/assets/71095930/9a150646-5ec8-43aa-977b-5c72dafaf256)
 
 <br>
 

@@ -46,3 +46,4 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 lib/modules/bmi_results/result_screen.dart
+README.pdf
